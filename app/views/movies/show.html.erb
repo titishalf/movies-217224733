@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @movie.title %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @movie.category %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @movie.year %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @movie.price %>
+</p>
+
+<p>
+<button type="button" class="btn btn-attachment btn-primary btn-lg"><strong>Attachment:</strong>button</button>
+  <%= @movie.attachment %>
+</p>
+
+<button type="button" class="btn btn-lg btn-secondary btn-lg" disabled><%= link_to 'Edit', edit_movie_path(@movie) %> |</button>
+<button type="button" class="btn btn-secondary btn-lg" disabled><%= link_to 'Back', movies_path %></button>
+

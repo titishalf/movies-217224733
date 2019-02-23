@@ -1,0 +1,43 @@
+<head>
+
+<style>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</style>
+</head>
+ 
+
+<%= link_to "MOVIE%STORE", new_movie_path, class: "btn btn-primary" %>
+<br />
+<br />
+<form class="form-inline my-2 my-lg-0">
+<input class="form-control mr-sm-2" type="search" placeholder="Search">
+<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>
+<br />
+<br />
+
+      <% @movies.each do |movie| %>
+         
+        
+
+<div class="row" >
+        <div class="col-md-4" style="position:relatives;left:70px;">
+          <div class="card mb-4 shadow-sm">
+            <img src="<%= movie.attachment %>" style="width:50%;height:80%;"/>
+            <div class="card-body">
+             <strong> <p class="card-text">Title:<%= movie.title %><br>Category:<%= movie.category %><br>Release year<%= movie.year %><br>Price<%= movie.price %><br>
+              
+              <button type="button" class="btn btn-lg btn-secondary btn-lg" disabled><%= link_to 'Edit', edit_movie_path(movie) %>
+<%= link_to 'Show', movie %>
+<%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></strong></button>
+
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                
+               
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
