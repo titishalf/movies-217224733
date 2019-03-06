@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_22_161847) do
+ActiveRecord::Schema.define(version: 2019_03_06_113700) do
 
-  create_table "movies", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "resumes", force: :cascade do |t|
     t.string "title"
     t.string "category"
+    t.integer "price"
     t.string "year"
-    t.string "price"
     t.string "attachment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
